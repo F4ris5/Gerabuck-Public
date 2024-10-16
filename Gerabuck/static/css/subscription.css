@@ -1,0 +1,110 @@
+main {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.plan {
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    padding: 20px;
+    width: 30%;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        font-size: 36px;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 20px 0;
+        font-size: 14px;
+
+        li {
+            margin-bottom: 10px;
+
+            &::before {
+                content: '✔';
+                margin-right: 10px;
+            }
+        }
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #fff;
+        color: #000;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        margin: 0 auto;
+
+        img {
+            margin-left: 10px;
+        }
+
+        &:hover {
+            background-color: #333;
+            color: #fff;
+        }
+    }
+
+    &.basic {
+        background-color: #000;
+        color: #fff;
+
+        p {
+            color: #fff;
+        }
+
+        button {
+            background-color: #fff;
+            color: #000;
+        }
+    }
+
+    &.standard {
+        background-color: #5A5A5A;
+        color: #fff;
+
+        p {
+            color: #fff;
+        }
+
+        button {
+            background-color: #fff;
+            color: #000;
+        }
+
+        &::after {
+            content: "#bestdeal";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #AB47BC;
+            color: #fff;
+            padding: 5px;
+            border-radius: 4px;
+        }
+    }
+}

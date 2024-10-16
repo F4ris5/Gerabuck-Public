@@ -4,237 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Access - Gerabuck</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #ffffff;
-            transition: opacity 0.5s ease-out;
-        }
-
-        body.fade-out {
-            opacity: 0;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #f4f4f4;
-            padding: 10px 20px;
-            border-bottom: 1px solid #ccc;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        nav {
-            flex-grow: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-left: 20px;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #000;
-            font-size: 16px;
-        }
-
-        .profile-icon {
-            position: relative;
-        }
-
-        .profile-icon img {
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-        .profile-menu {
-            display: none;
-            position: absolute;
-            right: 0;
-            background-color: white;
-            border: 1px solid #ccc;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 4px;
-            width: 100px;
-            text-align: left;
-        }
-
-        .profile-menu a {
-            display: block;
-            padding: 10px;
-            text-decoration: none;
-            color: black;
-        }
-
-        .profile-menu a:hover {
-            background-color: #f4f4f4;
-        }
-
-        main {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            font-size: 32px;
-            margin-bottom: 40px;
-        }
-
-        .form-container {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            max-width: 1200px;
-        }
-
-        .form-section {
-            background-color: #ccc;
-            padding: 20px;
-            border-radius: 8px;
-            width: 30%;
-            margin: 0 10px;
-        }
-
-        .form-section h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-
-        .form-section form {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .form-section label {
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        .form-section input,
-        .form-section select {
-            margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-        .form-section button {
-            padding: 10px;
-            background-color: #000;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .form-section button:hover {
-            background-color: #333;
-        }
-
-        .form-section small {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .dob-container {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .dob-container select {
-            width: 32%;
-        }
-
-        footer {
-            background-color: #E5E4E2;
-            padding: 20px;
-            border-top: 1px solid #ccc;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .footer-section {
-            width: 30%;
-        }
-
-        .footer-section h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-        }
-
-        .footer-section ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .footer-section ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-section ul li a {
-            text-decoration: none;
-            color: #000;
-        }
-
-        .footer-section ul li a:hover {
-            text-decoration: underline;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-        }
-
-        .error {
-            color: red;
-            font-size: 14px;
-            margin-top: -10px;
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/anchor.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user.css') }}">
 </head>
 <body>
     <header>
-        <div class="logo" onclick="navigateTo('homepage.html'); return false;">GERABUCK</div>
+        <div class="logo"><a href="/" onclick="navigateTo('/'); return false;">GERABUCK</a></div>
         <nav>
             <ul>
-                <li><a href="journey.html" onclick="navigateTo('journey.html'); return false;">Journey Plan</a></li>
-                <li><a href="subscription.html" onclick="navigateTo('subscription.html'); return false;">Subscription</a></li>
+                <li><a href="journey" onclick="navigateTo('journey.html'); return false;">Journey Plan</a></li>
+                <li><a href="subscription" onclick="navigateTo('subscription.html'); return false;">Subscription</a></li>
             </ul>
         </nav>
-        <div class="profile-icon">
-            <img src="https://w7.pngwing.com/pngs/722/101/png-transparent-computer-icons-user-profile-circle-abstract-miscellaneous-rim-account.png" alt="Profile" onclick="toggleProfileMenu()">
+        <div class="profile-icon" onclick="toggleProfileMenu()">
+            <img src="https://w7.pngwing.com/pngs/722/101/png-transparent-computer-icons-user-profile-circle-abstract-miscellaneous-rim-account.png" alt="Profile">
             <div id="profile-menu" class="profile-menu">
-                <a href="profile.html" onclick="navigateTo('profile.html'); return false;">Profile</a>
+                <a href="profile" onclick="navigateTo('profile'); return false;">Profile</a>
                 <a href="javascript:void(0);" onclick="logout()">Logout</a>
             </div>
         </div>
@@ -566,14 +351,14 @@
         // Function to handle page transition
         function navigateTo(url) {
             document.body.classList.add('fade-out');
-            setTimeout(() => {
+            setTimeout(function() {
                 window.location.href = url;
             }, 500);
         }
 
         // Add event listeners to navigation links
         document.addEventListener('DOMContentLoaded', function() {
-            const links = document.querySelectorAll('nav ul li a, .footer-section ul li a, .logo');
+            const links = document.querySelectorAll('nav ul li a, .footer-section ul li a, .logo a');
             links.forEach(link => {
                 link.addEventListener('click', function(event) {
                     event.preventDefault();

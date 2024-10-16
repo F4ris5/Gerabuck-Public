@@ -1,0 +1,84 @@
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+
+    h1 {
+        text-align: center;
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.form-section {
+    background-color: #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%;
+    margin: 0 10px;
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #333;
+            }
+        }
+
+        small {
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
+
+    .dob-container {
+        display: flex;
+        justify-content: space-between;
+
+        select {
+            width: 32%;
+        }
+    }
+
+    .error {
+        color: red;
+        font-size: 14px;
+        margin-top: -10px;
+        margin-bottom: 10px;
+    }
+}

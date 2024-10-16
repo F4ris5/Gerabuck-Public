@@ -1,0 +1,156 @@
+/* 
+This CSS file is to used in almost every html file as it contains attributes for
+body, navigation bar and footer bar
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
+    transition: opacity 0.5s ease-out; /* Add this line for the transition effect */
+}
+
+body.fade-out {
+    opacity: 0;
+}
+
+
+/* Navigation bar for logo */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ccc;
+
+    .logo a {
+        text-decoration: none;
+        color: #000;
+        font-size: 24px;
+        font-weight: bold;
+    }
+}
+/* Navigation bar for Journey and Subscription */
+nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+
+        li {
+            margin-left: 20px;
+
+            a {
+                text-decoration: none;
+                color: #000;
+                font-size: 16px;
+            }
+        }
+    }
+}
+/* Navigation bar for profile functions */
+.profile-icon {
+    position: relative;
+
+    img {
+        width: 30px;
+        height: 24px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+}
+
+.profile-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    width: 150px;
+    text-align: left;
+
+    a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: black;
+
+        &:hover {
+            background-color: #f4f4f4;
+        }
+    }
+}
+
+.about-us {
+    width: 50%;
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        text-align: justify;
+    }
+}
+
+
+
+footer {
+    background-color: #E5E4E2;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+
+        .footer-section {
+            width: 30%;
+
+            h3 {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+
+                li {
+                    margin-bottom: 10px;
+
+                    a {
+                        text-decoration: none;
+                        color: #000;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+}
