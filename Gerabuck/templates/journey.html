@@ -111,34 +111,7 @@
             Copyright © 2024 Gerabuck. All Rights Reserved.
         </div>
     </footer>
-    <script>
-        // Calculate fare
-        function calculateFare() {
-            const baseFare = 5.00;
-            const sst = 0.06;
-            const totalFare = baseFare + (baseFare * sst);
-            document.getElementById("fare-amount").innerText = "RM " + totalFare.toFixed(2);
-        }
-
-        // Function to handle page transition
-        function navigateTo(url) {
-            document.body.classList.add('fade-out');
-            setTimeout(function() {
-                window.location.href = url;
-            }, 500); // Match this to the CSS transition duration
-        }
-
-        // Add event listeners to navigation links
-        document.addEventListener('DOMContentLoaded', function() {
-            const links = document.querySelectorAll('nav ul li a, .footer-section ul li a, .logo a');
-            links.forEach(function(link) {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    const url = this.href;
-                    navigateTo(url);
-                });
-            });
-        });
-    </script>
+    <script src="{{ url_for('static', filename='js/journey.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/anchor.js') }}"></script>
 </body>
 </html>

@@ -12,8 +12,8 @@
         <div class="logo"><a href="/" onclick="navigateTo('/'); return false;">GERABUCK</a></div>
         <nav>
             <ul>
-                <li><a href="journey.html" onclick="navigateTo('journey'); return false;">Journey Plan</a></li>
-                <li><a href="subscription.html" onclick="navigateTo('subscription'); return false;">Subscription</a></li>
+                <li><a href="journey" onclick="navigateTo('journey'); return false;">Journey Plan</a></li>
+                <li><a href="subscription" onclick="navigateTo('subscription'); return false;">Subscription</a></li>
             </ul>
         </nav>
         <div class="profile-icon"><a href="profile.html" onclick="navigateTo('profile'); return false;"><img src="https://w7.pngwing.com/pngs/722/101/png-transparent-computer-icons-user-profile-circle-abstract-miscellaneous-rim-account.png" alt="Profile"></a></div>
@@ -82,28 +82,7 @@
             Copyright © 2024 Gerabuck. All Rights Reserved.
         </div>
     </footer>
-    <script>
-        function choosePlan(planName, planPrice) {
-            const url = `checkout.html?plan=${planName}&price=${planPrice}`;
-            navigateTo(url);
-        }
-
-        function navigateTo(url) {
-            document.body.classList.add('fade-out');
-            setTimeout(function() {
-                window.location.href = url;
-            }, 500); // Match this to the CSS transition duration
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            const links = document.querySelectorAll('nav ul li a, .footer-section ul li a, .logo');
-            links.forEach(function(link) {
-                link.addEventListener('click', function(event) {
-                    event.preventDefault();
-                    navigateTo(url);
-                });
-            });
-        });
-    </script>
+    <script src="{{ url_for('static', filename='js/subscription.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/anchor.js') }}"></script>
 </body>
 </html>
